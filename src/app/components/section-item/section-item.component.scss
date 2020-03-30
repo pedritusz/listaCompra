@@ -1,0 +1,17 @@
+.item-section-wrapper{
+
+    border: solid 5px black;
+    border-radius: 15%;
+    width: 40vw;
+    height: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .item-section--title{
+
+        font-size: 2rem;
+    
+    }
+    
+}
