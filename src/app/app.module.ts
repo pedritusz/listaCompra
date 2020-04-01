@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { MainPageBodyComponent } from './components/main-page-body/main-page-body.component';
 import { PruevasComponent } from './pruebasYdocumentacion/pruevas/pruevas.component';
 import { SectionItemComponent } from './components/section-item/section-item.component';
-import { ItemListComponent } from './components/item-list/item-list.component'
+import { ItemListComponent } from './components/item-list/item-list.component';
+import { ButtonComponent } from './components/button/button.component'
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ItemListComponent } from './components/item-list/item-list.component'
     MainPageBodyComponent,
     PruevasComponent,
     SectionItemComponent,
-    ItemListComponent
+    ItemListComponent,
+    ButtonComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   imports: [

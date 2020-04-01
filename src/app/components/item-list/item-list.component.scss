@@ -1,17 +1,19 @@
+
+@import '../../shared/styles/variables.scss';
 .item-list--container{
     width: 100%;
     position: relative;
 }
 .item-list--shared-container{
 
-    border-radius: 15px;
+    border-radius: $item-list--border-radius;
  
 } 
 
 .item-list--full-container{
 
-    background:rgb(59, 196, 59);
-    height: 40px;
+    background:$item-list--full-container-background;
+    height: $item-list--height;
     position: absolute;
     display: flex;
     align-items: center;
@@ -24,7 +26,7 @@
 
     background:red;
     width: 100%;
-    height: 40px;
+    height: $item-list--height;
     position: absolute;
     z-index: 1;
     display: flex;
@@ -35,20 +37,20 @@
 .item-list--wrapper{
 
     border: solid 5px;
-    height: 40px;
+    height: $item-list--height;
     width:  100%;
-    border-radius: 20px;
+    border-radius: $item-list--wrapper-border-radius;
 
 }
 
 
 
 .item-list--text{
-    margin:2px;
+    margin: $item-list--text-full;
  
 }
 
 .item-list--text-lack{
-    margin:10px;
+    margin: $item-list--text-lack;
     
 }

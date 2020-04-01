@@ -1,5 +1,4 @@
 import { QuantityTypeEnum } from '../enums/quantityTypeEnum';
-import { SubItemListInterface } from './subItemListInput.interface';
 
 export interface ItemListInputInterface {
 
@@ -8,6 +7,5 @@ export interface ItemListInputInterface {
     cuantityType?: QuantityTypeEnum;
     clickAction: string;
     name: string;
-    subItem?: SubItemListInterface;
     
 }

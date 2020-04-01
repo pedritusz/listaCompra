@@ -16,15 +16,9 @@ export class MockServicesService {
     
     clickAction: '/urlPrueva',
     minStock: 25,
-    stock: 0,
+    stock: 12,
     name: 'prueba',
     cuantityType: QuantityTypeEnum.units,
-    subItem: {
-
-      action: '/urlPrueba',
-      name: 'SubItemPrueva',
-
-    } 
 
   }
 
