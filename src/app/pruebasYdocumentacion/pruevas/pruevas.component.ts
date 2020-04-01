@@ -20,9 +20,10 @@ export class PruevasComponent implements OnInit {
 
   }
 
+  butonCmp($event){
+    console.log($event)
+  }
   constructor( public itemListMock: MockServicesService  ) { 
-
-
 
   }
 
