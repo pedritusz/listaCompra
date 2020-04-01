@@ -1,0 +1,25 @@
+<div class="item-list--container">
+<div class="item-list--wrapper">
+
+    <div [ngStyle]="{'width': inStockPercentage}" class="item-list--shared-container item-list--full-container">
+        <div class="item-list--text" *ngIf="inStockWidth >= 20">
+            {{itemName}}  {{inStock}} {{this.ItemListOptions.cuantityType}}
+        </div>
+        <div  class="item-list--text" *ngIf="inStockWidth < 20 && inStockWidth > 0">
+            {{inStock}}
+        </div>
+    </div>
+
+    <div class="item-list--shared-container item-list--lack-container">
+            <div  class="item-list--text-lack" *ngIf="inStockWidth < 20">
+                {{itemLack}}   {{itemName}}
+            </div>
+            <div *ngIf="inStockWidth > 20" class="item-list--text-lack">
+                {{itemLack}}
+            </div>
+        
+    </div>
+  
+
+</div>
+</div>
