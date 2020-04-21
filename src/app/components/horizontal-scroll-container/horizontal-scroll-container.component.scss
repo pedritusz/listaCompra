@@ -1,0 +1,60 @@
+.primary-secondary-parge-container{
+
+    display: flex;
+    flex-wrap: nowrap;
+    width: 200vw;
+    position: relative;
+    padding: 0;
+    margin: 0;
+        
+    .primary-container{
+        left: 0;
+        position:relative;
+        background: yellow;
+        width: 100vw;
+        height: 200px;
+        margin:0;
+        padding: 0;
+    }
+
+    .secondary-container{
+    
+        position:absolute;
+        background: blue;
+        width: 100vw;
+        height: 200px;
+        left:100vw;
+    }
+
+    .primary-to-secondary-animation{
+        animation-name: to-secondary;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+
+    .secondary-to-primary-animation{
+        animation-name: to-primary;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+
+
+    @keyframes to-primary {
+
+        from { left:0}
+        to {left: 100vw;}
+        
+    }
+
+    @keyframes to-secondary {
+
+        from { left:100vw}
+        60% {left: -10vw;}
+        100% {left: 0;}
+        
+    }
+
+}
+    
