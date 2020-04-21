@@ -7,7 +7,8 @@ import { MainPageBodyComponent } from './components/main-page-body/main-page-bod
 import { PruevasComponent } from './pruebasYdocumentacion/pruevas/pruevas.component';
 import { SectionItemComponent } from './components/section-item/section-item.component';
 import { ItemListComponent } from './components/item-list/item-list.component';
-import { ButtonComponent } from './components/button/button.component'
+import { ButtonComponent } from './components/button/button.component';
+import { ErrorComponentComponent } from './components/error-component/error-component.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ButtonComponent } from './components/button/button.component'
     PruevasComponent,
     SectionItemComponent,
     ItemListComponent,
-    ButtonComponent
+    ButtonComponent,
+    ErrorComponentComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   imports: [
