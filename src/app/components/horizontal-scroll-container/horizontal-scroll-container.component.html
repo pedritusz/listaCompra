@@ -1,13 +1,12 @@
-<button (click)=toSecondary()>to secondary</button>
 <div class="primary-secondary-parge-container" >
 
-    <div class="primary-container">
+    <div [ngStyle]="{'background-color': colors.primary}"  class="primary-container">
 
         <ng-content select="div[role=primary]"></ng-content>
 
     </div>
 
-    <div [ngClass]="{'primary-to-secondary-animation' : status === 'secondary','secondary-to-primary-animation' : status === 'primary'}" class="secondary-container ">
+    <div [ngStyle]="{'background-color': colors.secondary}"  [ngClass]="{'primary-to-secondary-animation' : status === 'secondary','secondary-to-primary-animation' : status === 'primary'}" class="secondary-container ">
 
         <ng-content select="[role=secondary]"></ng-content>
 

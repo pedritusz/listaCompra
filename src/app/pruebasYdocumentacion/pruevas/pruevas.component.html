@@ -1,16 +1,36 @@
 <div style="padding: 10px;">
 <p>pruevas works!</p>
 <app-main-page-body></app-main-page-body>
-<h1>section item component</h1>
-<div style="display: flex;width: 100%;flex-wrap: wrap;">
-<app-section-item [options]="optionSectionmock"></app-section-item>
-<app-section-item [options]="optionSectionmock"></app-section-item>
-<app-section-item [options]="optionSectionmock"></app-section-item>
+
+<h1>error message</h1>
+
+<app-alert-message [alertOptions]="alertOptions"></app-alert-message>
+<app-alert-message [alertOptions]="alertOptions3"></app-alert-message>
+
+<div style="width: 50%;">
+
+    <app-alert-message [alertOptions]="alertOptions2"></app-alert-message>
+
 </div>
-<p>este componente tiene un input options en le que se le pasa el
-     color de fondo, en el action se le pasa la ruta a laq
-    ue deve dirigir y el title muesta el texto que deve aparecer.</p>
-<h1>item list component</h1>
+<h1>
+    section item component
+</h1>
+
+<div style="display: flex;width: 100%;flex-wrap: wrap;">
+    <app-section-item [options]="optionSectionmock"></app-section-item>
+    <app-section-item [options]="optionSectionmock"></app-section-item>
+    <app-section-item [options]="optionSectionmock"></app-section-item>
+</div>
+
+<p>
+    este componente tiene un input options en le que se le pasa el
+    color de fondo, en el action se le pasa la ruta a laq
+    que deve dirigir y el title muesta el texto que deve aparecer.
+</p>
+
+<h1>
+    item list component
+</h1>
 
 este componente tiene un input con las opciones
 te calcula el porcentage de un producto respecto al stock minimo
@@ -23,7 +43,30 @@ que tenga configurado
     
 </div>
 
-<h1>ButtonComponent</h1>
-
+<h1>ButtonComponenttttttttt</h1>
 
 <app-button (actionEmit)="butonCmp($event)" [buttonOptions]="itemListMock.buttonMock" ></app-button>
+
+<h1>pagina desplazable</h1>
+componente con un metrodoto Secondary() que se accede por view child que intercanvia entre secciones
+en la primare pagina hay que añadir un role primary 
+y en la segunda un role secondary
+<button (click)="change()">change</button>
+usar input colors para seleccionar color de contenedores
+<pre>
+     app-horizontal-scroll-container
+
+        div role="primary"> soy primary /div
+    
+        div role="secondary"> soy secondary /div
+    
+     /app-horizontal-scroll-container
+</pre>
+<div>
+<app-horizontal-scroll-container>
+
+    <div role="primary"> soy primary</div>
+
+    <div role="secondary"> soy secondary</div>
+
+</app-horizontal-scroll-container>

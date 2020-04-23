@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-horizontal-scroll-container',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HorizontalScrollContainerComponent implements OnInit {
   status = 'initial';
-
+  @Input()colors = {
+    primary:'red',
+    secondary:'blue'
+  }
   constructor() { }
 
   ngOnInit(): void {

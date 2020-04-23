@@ -4,8 +4,8 @@ import {PruevasComponent} from "./pruebasYdocumentacion/pruevas/pruevas.componen
 import { HeaderComponent } from './components/header/header.component';
 
 const routes: Routes = [
-  {path:'',loadChildren:()=> import( './pages/login/login.module' ).then( m => m.LoginModule ) },
-  {path:"pruevas",component:PruevasComponent},
+  {path:'login',loadChildren:()=> import( './pages/login/login.module' ).then( m => m.LoginModule ) },
+  {path:'',component:PruevasComponent},
   {path:"urlPrueva",component:HeaderComponent},
 
 ];
