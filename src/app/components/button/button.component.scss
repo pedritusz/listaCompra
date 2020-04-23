@@ -1,0 +1,18 @@
+.button--wrapper{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+input{
+    //width: 80%;
+    height: 40px;
+    background-color: rgba(255, 187, 0, 0.884);
+    border-radius: 15px;
+    border: 4px black;
+    color: black;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

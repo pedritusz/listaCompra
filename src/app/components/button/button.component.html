@@ -1,1 +1,7 @@
-<p>button works!</p>
+<div class="button--wrapper">
+
+    <input (click)="actionClick($event)" [ngStyle]="{'width': width , 'background-color': backgroundColor, 'color':textColor }"
+
+        class="button--input" type="button" [value]="text">
+    
+</div>
