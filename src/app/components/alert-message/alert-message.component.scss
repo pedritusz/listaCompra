@@ -1,0 +1,36 @@
+.alert-message--danger-container{
+    display: flex;
+    justify-content: center;
+    width:99%;
+    background-color: red;
+    color: yellow;
+    border:solid black 2px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+
+}
+.alert-message--warning-container{
+    display: flex;
+    justify-content: center;
+    width:99%;
+    background-color: orange;
+    color: black;
+    border:solid yellow 2px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+
+}
+.alert-message--success-container{
+    display: flex;
+    justify-content: center;
+    width:99%;
+    background-color: green;
+    color: black;
+    border:solid yellow 2px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+
+}

@@ -1,6 +1,6 @@
 export enum QuantityTypeEnum {
     
     kilos = 'kilos',
-    units ='units',
+    units = 'units',
 
 }

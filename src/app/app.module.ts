@@ -8,8 +8,8 @@ import { PruevasComponent } from './pruebasYdocumentacion/pruevas/pruevas.compon
 import { SectionItemComponent } from './components/section-item/section-item.component';
 import { ItemListComponent } from './components/item-list/item-list.component';
 //import { ButtonComponent } from './components/button/button.component';
-import { ErrorComponentComponent } from './components/error-component/error-component.component'
-import { HorizontalScrollContainerComponent } from './components/horizontal-scroll-container/horizontal-scroll-container.component'
+import { HorizontalScrollContainerComponent } from './components/horizontal-scroll-container/horizontal-scroll-container.component';
+import { alertMessageComponent } from './components/alert-message/alert-message.component'
 
 @NgModule({
   declarations: [
@@ -19,10 +19,8 @@ import { HorizontalScrollContainerComponent } from './components/horizontal-scro
     PruevasComponent,
     SectionItemComponent,
     ItemListComponent,
-    //ButtonComponent,
-    ErrorComponentComponent,
-    //ButtonComponent,
-    HorizontalScrollContainerComponent
+    HorizontalScrollContainerComponent,
+    alertMessageComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   imports: [
