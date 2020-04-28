@@ -1,31 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { HeaderComponent } from './components/header/header.component'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainPageBodyComponent } from './components/main-page-body/main-page-body.component';
-import { PruevasComponent } from './pruebasYdocumentacion/pruevas/pruevas.component';
-import { SectionItemComponent } from './components/section-item/section-item.component';
-import { ItemListComponent } from './components/item-list/item-list.component';
-//import { ButtonComponent } from './components/button/button.component';
-import { HorizontalScrollContainerComponent } from './components/horizontal-scroll-container/horizontal-scroll-container.component';
-import { alertMessageComponent } from './components/alert-message/alert-message.component'
+import { LoginModule } from './pages/login/login.module';
+import { LoginFormModule } from './modules/login-form/module/login-form/login-form.module';
+import { HeaderModule } from './modules/header/header-module/header/header.module';
+import { PruevasModule } from './pruebasYdocumentacion/pruevas/pruevas.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    MainPageBodyComponent,
-    PruevasComponent,
-    SectionItemComponent,
-    ItemListComponent,
-    HorizontalScrollContainerComponent,
-    alertMessageComponent
+    AppComponent
   ],
+
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   imports: [
+    LoginModule,
+    LoginFormModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HeaderModule,
+    PruevasModule
   ],
   providers: [],
   bootstrap: [AppComponent]

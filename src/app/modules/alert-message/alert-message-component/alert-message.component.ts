@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {TypeProjectEnum} from '../../enums/typeAlert.enum'
+import {TypeProjectEnum} from '../../../enums/typeAlert.enum'
 @Component({
   selector: 'app-alert-message',
   templateUrl: './alert-message.component.html',

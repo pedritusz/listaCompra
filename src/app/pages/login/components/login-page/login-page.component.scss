@@ -1,0 +1,13 @@
+.login--wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: calc(100vh -  150px);
+    
+}
+
+.login--footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

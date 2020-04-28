@@ -1,0 +1,15 @@
+<div class="primary-secondary-parge-container" >
+
+    <div [ngStyle]="{'background-color': hscOptions.colors.primary}"  class="primary-container">
+
+        <ng-content select="div[role=primary]"></ng-content>
+
+    </div>
+
+    <div [ngStyle]="{'background-color': hscOptions.colors.secondary}"  [ngClass]="{'primary-to-secondary-animation' : status === 'secondary','secondary-to-primary-animation' : status === 'primary'}" class="secondary-container ">
+
+        <ng-content select="[role=secondary]"></ng-content>
+
+    </div>
+
+</div>

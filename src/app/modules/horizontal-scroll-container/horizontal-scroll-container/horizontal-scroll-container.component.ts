@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HorizontalScrollContainerInterface } from 'src/app/interfaces/horizontal-scroll-container';
 
 @Component({
   selector: 'app-horizontal-scroll-container',
@@ -7,10 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HorizontalScrollContainerComponent implements OnInit {
   status = 'initial';
-  @Input()colors = {
-    primary:'red',
-    secondary:'blue'
-  }
+  @Input()hscOptions?:HorizontalScrollContainerInterface;
   constructor() { }
 
   ngOnInit(): void {

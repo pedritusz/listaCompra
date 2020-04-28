@@ -6,14 +6,14 @@
     position: relative;
     padding: 0;
     margin: 0;
-    height: 500px;
+    height: 100%;
         
     .primary-container{
         left: 0;
         position:relative;
-        background: yellow;
+        background: rgb(238, 238, 128);
         width: 100vw;
-        height: 500px;
+        height: calc(100vh -  150px);
         margin:0;
         padding: 0;
     }
@@ -21,9 +21,9 @@
     .secondary-container{
     
         position:absolute;
-        background: blue;
+        background: rgb(122, 122, 224);
         width: 100vw;
-        height: 200px;
+        height: calc(100vh -  150px);
         left:100vw;
     }
 

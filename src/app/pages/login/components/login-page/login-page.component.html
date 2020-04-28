@@ -1,2 +1,29 @@
+<app-horizontal-scroll-container [hscOptions]="horizontalScrollContainerOptions">
 
-login page
+    <div class="login--wrapper"  role="primary" >
+
+        <app-login-form></app-login-form>
+
+        <app-alert-message *ngIf="false" [alertOptions]="alertOptions"></app-alert-message>
+
+        <div class="login--butons-wrapper">
+
+            <app-button (actionEmit)="buttonCmp($event)" [buttonOptions]="continueLoginButtonOptions" ></app-button>
+            <app-button (actionEmit)="buttonCmp($event)" [buttonOptions]="toRegisterButtonOptions" ></app-button>
+
+        </div>
+
+        <div class="login--footer">
+
+            <h3>created by pedrtus z</h3>
+            
+        </div>
+
+    </div>
+
+
+    <div role="secondary">
+
+    </div>
+
+</app-horizontal-scroll-container>

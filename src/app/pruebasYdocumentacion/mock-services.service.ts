@@ -15,7 +15,7 @@ export class MockServicesService {
 
   itemList: ItemListInputInterface = {
     
-    clickAction: '/urlPrueva',
+    clickAction: '/prueva',
     minStock: 25,
     stock: 12,
     name: 'prueba',
