@@ -1,12 +1,10 @@
 <div class="login-form--wrapper"  [formGroup]="loginForm">
-    <label for="username">username:</label>
-    <label for="username">
-        <input class="login-form--common-text-field" type="text" formControlName="userName">
+    <label for="email">email:</label>
+    <label for="email">
+        <input class="login-form--common-text-field" type="text" formControlName="email">
     </label>
     <label for="pasword">password:</label>
     <label for="password">
-        <input class="login-form--common-text-field" type="password">
-    </label>
-    <label for="submit">
+        <input class="login-form--common-text-field" type="password" formControlName="password">
     </label>
 </div>

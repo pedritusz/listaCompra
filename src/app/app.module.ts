@@ -6,22 +6,32 @@ import { LoginModule } from './pages/login/login.module';
 import { LoginFormModule } from './modules/login-form/module/login-form/login-form.module';
 import { HeaderModule } from './modules/header/header-module/header/header.module';
 import { PruevasModule } from './pruebasYdocumentacion/pruevas/pruevas.module';
-
+import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { ErrorInterceptorInterceptor } from './interceptors/error-interceptor.interceptor';
+import { ErrorService } from './services/error.service';
+import { DashboardModule } from './pages/dashboard/module/dashboard.module';
+import { LoginOkGuard } from './guards/login-ok.guard';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
 
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   imports: [
+    BrowserModule,
     LoginModule,
     LoginFormModule,
-    BrowserModule,
     AppRoutingModule,
     HeaderModule,
-    PruevasModule
+    PruevasModule,
+    HttpClientModule,
+    DashboardModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorInterceptor, multi: true },
+    LoginOkGuard
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
