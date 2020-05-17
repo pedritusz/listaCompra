@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http'
 import { LoginResponse } from '../interfaces/login-response';
 import { Router } from '@angular/router';
 import { ErrorService } from './error.service';
-import { ErrorFromService } from '../interfaces/error-from-service';
+import { ErrorFromErrorService } from '../interfaces/error-from-service';
 import { BehaviorSubject } from 'rxjs';
 class loginstoreClass {
   constructor() {
@@ -25,19 +25,21 @@ export class LoginServiceService implements OnInit {
 loginStore = new loginstoreClass();
 
 ngOnInit(){
-  this.errorService.error.subscribe((error:ErrorFromService)=>{
-    console.log('error desde login service')
+  
+}
+  constructor(private http:HttpClient,private router:Router,private errorService:ErrorService) { 
+
+  this.errorService.error.subscribe((error:ErrorFromErrorService)=>{
     this.loginStore.error.next(
       {
-        message:error.error.message,
+        message:error?error.error.message:undefined,
         type:TypeProjectEnum.danger
       }
     )
     
-  })
-}
-  constructor(private http:HttpClient,private router:Router,private errorService:ErrorService) { 
+    setTimeout(()=>{this.errorService.error.next(undefined)},10000)
     
+  })
   }
 
   get loginButtonOptions():ButtonInterface{
@@ -70,7 +72,6 @@ ngOnInit(){
         sessionStorage.setItem('okUser','ok');
 
         this.router.navigate(['dashboard'])
-
         
         }
         
@@ -80,9 +81,25 @@ ngOnInit(){
   
   }
   
+  get continueCreateProfileButtonOptions():ButtonInterface{
+    return {
 
+      action:'creteProfile',
+      text:'continue',
+      bgColor:'yellow',
+      textColor:'white',
+    }
+  }
     
-  
+  get toLoginButtonOptions():ButtonInterface{
+    return {
+
+      action:'toLogin',
+      text:'To Login',
+      bgColor:'red',
+      textColor:'white',
+    }
+  }
 
   get toRegisterButtonOptions ():ButtonInterface{
 

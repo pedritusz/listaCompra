@@ -6,6 +6,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import {AlertMessageModule} from '../../modules/alert-message/alert-message-module/alert-message/alert-message.module';
 import {ButtonModule} from '../../modules/button/button-module/button.module';
 import {HorizontaScrollContainerModule} from '../../modules/horizontal-scroll-container/horizontal-scroll-container-module/horizonta-scroll-container/horizonta-scroll-container.module';
+import { LoginServiceService } from 'src/app/services/login.service';
 
 
 @NgModule({
@@ -24,6 +25,9 @@ import {HorizontaScrollContainerModule} from '../../modules/horizontal-scroll-co
   exports:[
     LoginPageComponent
     
+  ],
+  providers:[
+    LoginServiceService
   ]
   
 })

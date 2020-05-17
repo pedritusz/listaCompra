@@ -1,4 +1,4 @@
-export interface ErrorFromService {
+export interface ErrorFromErrorService {
     error:{
         message:string,
         ok: boolean
