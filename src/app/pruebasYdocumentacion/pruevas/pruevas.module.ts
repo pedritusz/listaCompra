@@ -24,7 +24,6 @@ import { PruevasRouterModule } from './pruevas.routes'
     HeaderModule,
     HorizontaScrollContainerModule,
     ItemListModule,
-    LoginFormModule,
     MainItemBodyModule,
     SectionItemModule,
     RouterModule,
