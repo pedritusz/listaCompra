@@ -2,7 +2,16 @@
 
     <div class="login--wrapper"  role="primary" >
 
-        <app-login-form></app-login-form>
+        <div class="login-form--wrapper"  [formGroup]="loginForm">
+            <label for="email">email:</label>
+            <label for="email">
+                <input class="login-form--common-text-field" type="text" formControlName="email">
+            </label>
+            <label for="pasword">password:</label>
+            <label for="password">
+                <input class="login-form--common-text-field" type="password" formControlName="password">
+            </label>
+        </div>
 
         <app-alert-message *ngIf="error.message" [alertOptions]="error"></app-alert-message>
 
@@ -22,12 +31,44 @@
     </div>
     
     
-    <div role="secondary">
+    <div class="login--wrapper" role="secondary">
+
+
         
+        <div class="register-form--wrapper"  [formGroup]="registerForm">
+
+            <label for="name">name:</label>
+
+            <label for="name">
+                <input class="register-form--common-text-field" type="text" formControlName="name">
+            </label>
+
+            <label for="email">email:</label>
+            <label for="email">
+                <input class="register-form--common-text-field" type="text" formControlName="email">
+            </label>
+
+            <label for="password">password:</label>
+            <label for="password">
+                <input class="register-form--common-text-field" type="password" formControlName="password">
+            </label>
+            
+            <label for="confirm password">confirm password:</label>
+            <label for="confirm password">
+                <input class="register-form--common-text-field" type="confirm password" formControlName="confirmPassword">
+            </label>
+
+        </div>
+
+        <app-alert-message *ngIf="error.message" [alertOptions]="error"></app-alert-message>
+
+        <div class="login--butons-wrapper">
+            
+            <app-button (actionEmit)="buttonCmp($event)" [buttonOptions]="continueCreateProfileOptions" ></app-button>
+            <app-button (actionEmit)="buttonCmp($event)" [buttonOptions]="toLoginButtonOptions" ></app-button>
         
-        <app-button (actionEmit)="buttonCmp($event)" [buttonOptions]="continueCreateProfileOptions" ></app-button>
-        <app-button (actionEmit)="buttonCmp($event)" [buttonOptions]="toLoginButtonOptions" ></app-button>
-        
+        </div>
+
     </div>
 
 </app-horizontal-scroll-container>

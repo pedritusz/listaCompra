@@ -71,7 +71,6 @@ ngOnInit(){
         sessionStorage.setItem('userToken',response.token);
         sessionStorage.setItem('okUser','ok');
 
-        this.router.navigate(['dashboard'])
         
         }
         
@@ -79,6 +78,26 @@ ngOnInit(){
         
     )
   
+  }
+
+  register(newUser){
+  
+    //cambiar interfaz de repsuesta
+  
+    this.http.post('http://localhost:3002/users',newUser).subscribe((response:LoginResponse)=>{
+      
+    if(response.ok){
+
+      this.loginStore.loginResponse = response;
+      sessionStorage.setItem('userToken',response.token);
+      sessionStorage.setItem('okUser','ok');
+
+      this.router.navigate(['dashboard'])
+
+      }
+
+    })
+
   }
   
   get continueCreateProfileButtonOptions():ButtonInterface{

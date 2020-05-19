@@ -3,8 +3,8 @@ import { LoginServiceService } from '../../../../services/login.service'
 import { HorizontalScrollContainerComponent } from 'src/app/modules/horizontal-scroll-container/horizontal-scroll-container/horizontal-scroll-container.component';
 import { HorizontalScrollContainerInterface } from 'src/app/interfaces/horizontal-scroll-container';
 import { ButtonInterface } from 'src/app/interfaces/buttonInterface';
-import { LoginFormComponent } from 'src/app/modules/login-form/module/login-form/login-form/login-form.component';
 import { ErrorService } from 'src/app/services/error.service';
+import { Validators,FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -15,9 +15,9 @@ import { ErrorService } from 'src/app/services/error.service';
 export class LoginPageComponent implements OnInit {
 
   @ViewChild(HorizontalScrollContainerComponent)hcc:HorizontalScrollContainerComponent;
-  @ViewChild(LoginFormComponent)form:LoginFormComponent;
   
-  constructor(private loginService:LoginServiceService,private errorService:ErrorService ) { }
+  
+  constructor(private loginService:LoginServiceService,private errorService:ErrorService,private fb: FormBuilder ) { }
 
   continueLoginButtonOptions: ButtonInterface = this.loginService.loginButtonOptions;
   toRegisterButtonOptions:ButtonInterface = this.loginService.toRegisterButtonOptions;
@@ -30,42 +30,68 @@ export class LoginPageComponent implements OnInit {
     //subcripcion al error que obtiene el login service
     this.loginService.loginStore.error.subscribe((error)=>{
       this.error = error
-    })
+    });
   }
+  
+  loginForm = this.fb.group({
+
+    email:['',Validators.required],
+    password:['',Validators.required]   
+ 
+  });
+
+  registerForm = this.fb.group({
+
+    name:['',[Validators.required,Validators.max(16),Validators.min(6)]],
+    email:['',[Validators.required,Validators.email]],
+    password:['',[Validators.required,Validators.min(6),Validators.max(16)]],
+    confirmPassword:['',Validators.required],
+
+  });
 
 //capturo la accion del boton component
   public buttonCmp($event){
+
     switch ($event) {
       case 'continueLogin':
-      this.submit()
+      this.submit();
         break;
 
         case 'toRegister':
-        this.hcc.toSecondary()
+        this.hcc.toSecondary();
           break;
 
         case 'toLogin':
-        this.hcc.toSecondary()
+        this.hcc.toSecondary();
           break;        
-        
+
         case 'creteProfile':
-          this.creteProfile()
+          this.creteProfile();
           break;     
 
       default:
         break;
     }
+
   }
 
 
   submit(){
-    if(this.form.loginForm.valid){
-      this.loginService.login(this.form.loginForm.value)
+
+    if(this.loginForm.valid){
+      this.loginService.login(this.loginForm.value);
     }
 
   }
 
   creteProfile(){
-   console.log('create user') 
+
+    console.log( 'contraseñas iguales', this.registerForm.value.password === this.registerForm.value.confirmPassword );
+   // console.log( 'register form validator', this.registerForm.valid )
+
   }
+
+  
+
 }
+

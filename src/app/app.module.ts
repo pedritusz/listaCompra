@@ -8,7 +8,6 @@ import { HeaderModule } from './modules/header/header-module/header/header.modul
 import { PruevasModule } from './pruebasYdocumentacion/pruevas/pruevas.module';
 import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { ErrorInterceptorInterceptor } from './interceptors/error-interceptor.interceptor';
-import { ErrorService } from './services/error.service';
 import { DashboardModule } from './pages/dashboard/module/dashboard.module';
 import { LoginOkGuard } from './guards/login-ok.guard';
 @NgModule({
@@ -20,7 +19,6 @@ import { LoginOkGuard } from './guards/login-ok.guard';
   imports: [
     BrowserModule,
     LoginModule,
-    LoginFormModule,
     AppRoutingModule,
     HeaderModule,
     PruevasModule,
