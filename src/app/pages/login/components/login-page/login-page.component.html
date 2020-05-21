@@ -3,14 +3,19 @@
     <div class="login--wrapper"  role="primary" >
 
         <div class="login-form--wrapper"  [formGroup]="loginForm">
+
             <label for="email">email:</label>
+
             <label for="email">
                 <input class="login-form--common-text-field" type="text" formControlName="email">
             </label>
+
             <label for="pasword">password:</label>
+
             <label for="password">
                 <input class="login-form--common-text-field" type="password" formControlName="password">
             </label>
+
         </div>
 
         <app-alert-message *ngIf="error.message" [alertOptions]="error"></app-alert-message>
@@ -23,8 +28,6 @@
         </div>
 
         <div class="login--footer">
-
-            
             
         </div>
         
@@ -44,18 +47,21 @@
             </label>
 
             <label for="email">email:</label>
+
             <label for="email">
                 <input class="register-form--common-text-field" type="text" formControlName="email">
             </label>
 
             <label for="password">password:</label>
+
             <label for="password">
                 <input class="register-form--common-text-field" type="password" formControlName="password">
             </label>
             
             <label for="confirm password">confirm password:</label>
+
             <label for="confirm password">
-                <input class="register-form--common-text-field" type="confirm password" formControlName="confirmPassword">
+                <input class="register-form--common-text-field" type="password" formControlName="confirmPassword">
             </label>
 
         </div>

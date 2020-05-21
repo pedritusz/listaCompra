@@ -10,7 +10,6 @@ import { ButtonInterface } from '../interfaces/buttonInterface';
 export class MockServicesService {
 
   constructor() { 
-    console.log('mockService')
   }
 
   itemList: ItemListInputInterface = {

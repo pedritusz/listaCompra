@@ -44,7 +44,7 @@ export class LoginPageComponent implements OnInit {
 
     name:['',[Validators.required,Validators.max(16),Validators.min(6)]],
     email:['',[Validators.required,Validators.email]],
-    password:['',[Validators.required,Validators.min(6),Validators.max(16)]],
+    password:['',[Validators.required,Validators.min(6)]],
     confirmPassword:['',Validators.required],
 
   });
@@ -85,7 +85,10 @@ export class LoginPageComponent implements OnInit {
   }
 
   creteProfile(){
+    if(this.registerForm.valid){
 
+    }
+    console.log(this.registerForm)
     console.log( 'contraseñas iguales', this.registerForm.value.password === this.registerForm.value.confirmPassword );
    // console.log( 'register form validator', this.registerForm.valid )
 

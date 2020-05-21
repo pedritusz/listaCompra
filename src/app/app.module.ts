@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './pages/login/login.module';
 import { HeaderModule } from './modules/header/header-module/header/header.module';
-import { PruevasModule } from './pruebasYdocumentacion/pruevas/pruevas.module';
+import { PruevasModule } from './documentation/pruevas/pruevas.module';
 import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { ErrorInterceptorInterceptor } from './interceptors/error-interceptor.interceptor';
 import { DashboardModule } from './pages/dashboard/module/dashboard.module';
