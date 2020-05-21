@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HorizontalScrollContainerComponent } from '../../horizontal-scroll-container/horizontal-scroll-container.component'
+import { HorizontalScrollContainerComponent } from '../../horizontal-scroll-container/horizontal-scroll-container.component';
 
 
 @NgModule({
@@ -10,7 +10,7 @@ import { HorizontalScrollContainerComponent } from '../../horizontal-scroll-cont
   imports: [
     CommonModule
   ],
-  exports:[
+  exports: [
     HorizontalScrollContainerComponent
   ]
 })

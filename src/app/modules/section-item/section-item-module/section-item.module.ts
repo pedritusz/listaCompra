@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SectionItemComponent } from '../section-item-component/section-item.component'
+import { SectionItemComponent } from '../section-item-component/section-item.component';
 import { RouterModule } from '@angular/router';
 
 
@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule
   ],
-  exports:[
+  exports: [
     SectionItemComponent
   ]
 })

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainPageBodyComponent } from '../../main-page-body-component/main-page-body.component'
+import { MainPageBodyComponent } from '../../main-page-body-component/main-page-body.component';
 
 
 @NgModule({
@@ -10,7 +10,7 @@ import { MainPageBodyComponent } from '../../main-page-body-component/main-page-
   imports: [
     CommonModule
   ],
-  exports:[
+  exports: [
     MainPageBodyComponent
   ]
 })

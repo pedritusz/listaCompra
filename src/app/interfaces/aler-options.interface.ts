@@ -1,8 +1,8 @@
 import { TypeProjectEnum } from '../enums/typeAlert.enum';
 
-export interface AlerOptionsInterface{
+export interface AlerOptionsInterface {
 
-    message:string;
-    type: TypeProjectEnum
-    
-  }
+    message: string;
+    type: TypeProjectEnum;
+
+}

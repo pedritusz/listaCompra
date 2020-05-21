@@ -8,36 +8,35 @@ import { HorizontalScrollContainerInterface } from 'src/app/interfaces/horizonta
 })
 export class HorizontalScrollContainerComponent implements OnInit {
   status = 'initial';
-  @Input()hscOptions?:HorizontalScrollContainerInterface;
+  @Input()hscOptions?: HorizontalScrollContainerInterface;
   constructor() { }
 
   ngOnInit(): void {
   }
-  
-  public toSecondary(){
-   
+
+  public toSecondary() {
+
     switch (this.status) {
       case 'initial':
         this.status = 'secondary';
 
         break;
-      
+
       case 'secondary':
-        
+
         this.status = 'primary';
 
         break;
       case 'primary':
-      
+
         this.status = 'secondary';
 
         break;
-    
+
       default:
-      
+
         break;
     }
-    
 
   }
 }

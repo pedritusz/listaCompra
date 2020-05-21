@@ -7,5 +7,5 @@ export interface ItemListInputInterface {
     cuantityType?: QuantityTypeEnum;
     clickAction: string;
     name: string;
-    
+
 }

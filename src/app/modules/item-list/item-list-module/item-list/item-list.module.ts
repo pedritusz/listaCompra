@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ItemListComponent } from '../../item-list-component/item-list.component'
+import { ItemListComponent } from '../../item-list-component/item-list.component';
 
 
 @NgModule({
@@ -10,7 +10,7 @@ import { ItemListComponent } from '../../item-list-component/item-list.component
   imports: [
     CommonModule
   ],
-  exports:[
+  exports: [
     ItemListComponent
   ]
 })

@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { alertMessageComponent } from '../../alert-message-component/alert-message.component'
+import { AlertMessageComponent } from '../../alert-message-component/alert-message.component';
 
 
 
 @NgModule({
   declarations: [
-    alertMessageComponent
+    AlertMessageComponent
   ],
   imports: [
     CommonModule
   ],
-  exports:[
-    alertMessageComponent
+  exports: [
+    AlertMessageComponent
   ]
 })
 export class AlertMessageModule { }

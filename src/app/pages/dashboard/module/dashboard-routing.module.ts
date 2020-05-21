@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {DashboardComponent} from '../component/dashboard/dashboard.component'
+import {DashboardComponent} from '../component/dashboard/dashboard.component';
 import { LoginOkGuard } from 'src/app/guards/login-ok.guard';
 
 
 const routes: Routes = [
-  {path:'', component: DashboardComponent, canActivate:[LoginOkGuard]}
+  {path : '', component: DashboardComponent, canActivate : [LoginOkGuard]}
 ];
 
 @NgModule({

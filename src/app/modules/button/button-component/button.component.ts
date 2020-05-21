@@ -10,46 +10,46 @@ export class ButtonComponent implements OnInit {
   backgroundColor: string;
   width: string;
   text: string;
-  action:string;
-  textColor:string;
+  action: string;
+  textColor: string;
 
-  @Input()buttonOptions : ButtonInterface;
+  @Input()buttonOptions: ButtonInterface;
   @Output() actionEmit = new EventEmitter();
-  
+
   constructor() { }
 
   ngOnInit(): void {
 
     this.setWidth();
     this.text = this.buttonOptions.text;
-    this.action = this.buttonOptions.action
+    this.action = this.buttonOptions.action;
     this.setBgColor();
     this.setTextColor();
-    
+
 
   }
 
-  actionClick($event){
+  actionClick($event) {
 
-    this.actionEmit.emit(this.action)
-    
-  }
-
-  setWidth(){
-    this.width = this.buttonOptions.width ? this.buttonOptions.width + '%' : '80%'
-    
-  }
-
-  setBgColor(){
-
-    this.backgroundColor = this.buttonOptions.bgColor ? this.buttonOptions.bgColor : 'yellow'
+    this.actionEmit.emit(this.action);
 
   }
 
-  setTextColor(){
-
-    this.textColor = this.buttonOptions.textColor ? this.buttonOptions.textColor : 'black'
+  setWidth() {
+    this.width = this.buttonOptions.width ? this.buttonOptions.width + '%' : '80%';
 
   }
-  
+
+  setBgColor() {
+
+    this.backgroundColor = this.buttonOptions.bgColor ? this.buttonOptions.bgColor : 'yellow';
+
+  }
+
+  setTextColor() {
+
+    this.textColor = this.buttonOptions.textColor ? this.buttonOptions.textColor : 'black';
+
+  }
+
 }

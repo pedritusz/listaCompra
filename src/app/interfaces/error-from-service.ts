@@ -1,6 +1,8 @@
 export interface ErrorFromErrorService {
-    error:{
-        message:string,
+
+    error: {
+        message: string,
         ok: boolean
-    }
+    };
+
 }

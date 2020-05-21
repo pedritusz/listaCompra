@@ -1,5 +1,6 @@
 export interface LoginResponse {
 
-    ok:boolean,
-    token:string
+    ok: boolean;
+    token: string;
+
 }

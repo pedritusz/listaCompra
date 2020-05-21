@@ -1,14 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {TypeProjectEnum} from '../../../enums/typeAlert.enum'
+import {TypeProjectEnum} from '../../../enums/typeAlert.enum';
 @Component({
   selector: 'app-alert-message',
   templateUrl: './alert-message.component.html',
   styleUrls: ['./alert-message.component.scss']
 })
-export class alertMessageComponent implements OnInit {
+export class AlertMessageComponent implements OnInit {
 
-  @Input()alertOptions:{
-    message:string;
+  @Input()alertOptions: {
+    message: string;
     type: TypeProjectEnum
   };
 

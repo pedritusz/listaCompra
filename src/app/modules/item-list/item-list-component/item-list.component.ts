@@ -11,13 +11,13 @@ import { RouterLink, Router } from '@angular/router';
 export class ItemListComponent implements OnInit {
 
   @Input() ItemListOptions: ItemListInputInterface;
-  itemName:string;
-  inStockWidth:number;
+  itemName: string;
+  inStockWidth: number;
   inStock: number;
   inStockPercentage: string;
-  itemLack:number;
+  itemLack: number;
   constructor(
-    public router : Router,
+    public router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -25,10 +25,10 @@ export class ItemListComponent implements OnInit {
     this.widthCuantitylItem();
     this.setStock();
     this.itemName = this.ItemListOptions.name;
-    
+
   }
 
-  setStock(){
+  setStock() {
 
     this.inStock = this.ItemListOptions.stock;
     this.itemLack = this.ItemListOptions.minStock - this.inStock;
@@ -36,25 +36,25 @@ export class ItemListComponent implements OnInit {
   }
 
   widthCuantitylItem() {
-    if(this.ItemListOptions.stock > this.ItemListOptions.minStock){
+    if (this.ItemListOptions.stock > this.ItemListOptions.minStock) {
 
-    this.inStockPercentage = '100%'
+    this.inStockPercentage = '100%';
 
-    }else{
+    } else {
 
-      this.inStockPercentage = ((100/this.ItemListOptions.minStock)*this.ItemListOptions.stock).toString() + '%'
+      this.inStockPercentage = ((100 / this.ItemListOptions.minStock) * this.ItemListOptions.stock).toString() + '%';
 
 
     }
 
-    this.inStockWidth = (100/this.ItemListOptions.minStock)*this.ItemListOptions.stock;
+    this.inStockWidth = ( 100 / this.ItemListOptions.minStock ) * this.ItemListOptions.stock;
 
   }
 
-  onClick(){
+  onClick() {
 
-    console.log(this.ItemListOptions.clickAction)
-    this.router.navigate([this.ItemListOptions.clickAction])
+    console.log( this.ItemListOptions.clickAction );
+    this.router.navigate( [this.ItemListOptions.clickAction] );
 
   }
 

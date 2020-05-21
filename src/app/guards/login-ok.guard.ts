@@ -7,21 +7,21 @@ import { LoginServiceService } from '../services/login.service';
   providedIn: 'root'
 })
 export class LoginOkGuard implements CanActivate {
-  constructor(private loginService:LoginServiceService, private router:Router){
+  constructor(private loginService: LoginServiceService, private router: Router ) {
 
   }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      if(this.loginService.loginStore.loginResponse.ok){
-  
+      if (this.loginService.loginStore.loginResponse.ok) {
+
         return true;
-  
+
       }
 
-      this.router.navigate(['pruevas'])
-      
+      this.router.navigate(['pruevas']);
+
     }
-    
+
   }

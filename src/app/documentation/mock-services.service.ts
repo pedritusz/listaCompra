@@ -9,27 +9,24 @@ import { ButtonInterface } from '../interfaces/buttonInterface';
 
 export class MockServicesService {
 
-  constructor() { 
-  }
+  constructor() {
+
+    }
 
   itemList: ItemListInputInterface = {
-    
     clickAction: '/prueva',
     minStock: 25,
     stock: 12,
     name: 'prueba',
     cuantityType: QuantityTypeEnum.units,
-
   };
 
-  buttonMock : ButtonInterface =  {
-    
+  buttonMock: ButtonInterface =  {
     action: 'guapa',
     bgColor: 'green',
     text: 'irache',
     width: '80',
-    textColor:'yellow'
-
-  }
+    textColor: 'yellow'
+  };
 
 }

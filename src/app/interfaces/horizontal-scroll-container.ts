@@ -1,10 +1,10 @@
 export interface HorizontalScrollContainerInterface {
-    
-    colors:{
 
-        primary:string,
-        secondary:string
+    colors: {
 
-    }
+        primary: string,
+        secondary: string
+
+    };
 
 }

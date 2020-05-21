@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './pages/login/login.module';
 import { HeaderModule } from './modules/header/header-module/header/header.module';
 import { PruevasModule } from './documentation/pruevas/pruevas.module';
-import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptorInterceptor } from './interceptors/error-interceptor.interceptor';
 import { DashboardModule } from './pages/dashboard/module/dashboard.module';
 import { LoginOkGuard } from './guards/login-ok.guard';
@@ -25,9 +25,7 @@ import { LoginOkGuard } from './guards/login-ok.guard';
     DashboardModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorInterceptor, multi: true },
-    LoginOkGuard
-    
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorInterceptor, multi: true }, LoginOkGuard
   ],
   bootstrap: [AppComponent]
 })

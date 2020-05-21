@@ -7,10 +7,8 @@ import { ErrorFromErrorService } from '../interfaces/error-from-service';
 })
 export class ErrorService {
 
-  error = new BehaviorSubject<ErrorFromErrorService>(undefined)
+  error = new BehaviorSubject<ErrorFromErrorService>(undefined);
 
   constructor() { }
-  
-
 
 }
