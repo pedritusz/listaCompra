@@ -10,6 +10,8 @@ import { ErrorService } from './error.service';
 import { ErrorFromErrorService } from '../interfaces/error-from-service';
 import { BehaviorSubject } from 'rxjs';
 import { UserPostClass } from '../classes/user-post.class';
+import { environment } from 'src/environments/environment';
+import { Environment } from '../enums/env.enum';
 class LoginStoreClass {
   constructor() {
 
@@ -54,7 +56,7 @@ export class LoginServiceService {
 
   login(credentials): void {
 
-    this.http.post('http://localhost:3002/login', credentials).subscribe(
+    this.http.post(`${Environment.production}/login`, credentials).subscribe(
 
       (response: LoginResponse) => {
 
@@ -77,7 +79,7 @@ export class LoginServiceService {
     console.log('register method', newUser);
     // cambiar interfaz de repsuesta
 
-    this.http.post('http://localhost:3002/users', newUser).subscribe((response: LoginResponse) => {
+    this.http.post(`${Environment.production}/users`, newUser).subscribe((response: LoginResponse) => {
 
       if (response.ok) {
 

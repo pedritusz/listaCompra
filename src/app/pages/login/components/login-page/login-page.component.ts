@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { LoginServiceService } from '../../../../services/login.service';
 import { HorizontalScrollContainerComponent } from 'src/app/modules/horizontal-scroll-container/horizontal-scroll-container/horizontal-scroll-container.component';
 import { HorizontalScrollContainerInterface } from 'src/app/interfaces/horizontal-scroll-container';
@@ -7,8 +7,6 @@ import { ErrorService } from 'src/app/services/error.service';
 import { Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { AlerOptionsInterface } from 'src/app/interfaces/aler-options.interface';
 import { UserPostClass } from 'src/app/classes/user-post.class';
-import { RoleEnum } from 'src/app/enums/role.enum';
-import { throwError } from 'rxjs';
 
 
 @Component({
