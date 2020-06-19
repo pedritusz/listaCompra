@@ -3,12 +3,13 @@ import { ButtonInterface } from '../interfaces/buttonInterface';
 import { HorizontalScrollContainerInterface } from '../interfaces/horizontal-scroll-container';
 import { AlerOptionsInterface } from '../interfaces/aler-options.interface';
 import { TypeProjectEnum } from '../enums/typeAlert.enum';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { LoginResponse } from '../interfaces/login-response';
 import { Router } from '@angular/router';
 import { ErrorService } from './error.service';
 import { ErrorFromErrorService } from '../interfaces/error-from-service';
 import { BehaviorSubject } from 'rxjs';
+import { UserPostClass } from '../classes/user-post.class';
 class LoginStoreClass {
   constructor() {
 
@@ -18,7 +19,7 @@ class LoginStoreClass {
 
 }
 @Injectable({
-  providedIn:  'root'
+  providedIn: 'root'
 })
 
 export class LoginServiceService {
@@ -26,17 +27,17 @@ export class LoginServiceService {
 
   constructor(private http: HttpClient, private router: Router, private errorService: ErrorService) {
 
-  this.errorService.error.subscribe((error: ErrorFromErrorService) => {
-    this.loginStore.error.next(
-      {
-        message: error ? error.error.message : undefined,
-        type: TypeProjectEnum.danger
-      }
-    );
+    this.errorService.error.subscribe((error: ErrorFromErrorService) => {
+      this.loginStore.error.next(
+        {
+          message: error ? error.error.message : undefined,
+          type: TypeProjectEnum.danger
+        }
+      );
 
-    setTimeout(() => { this.errorService.error.next(undefined ); }, 10000 );
+      setTimeout(() => { this.errorService.error.next(undefined); }, 10000);
 
-  });
+    });
   }
 
   get loginButtonOptions(): ButtonInterface {
@@ -45,7 +46,7 @@ export class LoginServiceService {
       action: 'continueLogin',
       text: 'continue',
       bgColor: 'yellow',
-      textColor: 'white',
+      textColor: 'black',
 
     };
 
@@ -53,15 +54,16 @@ export class LoginServiceService {
 
   login(credentials): void {
 
-    this.http.post('http: //localhost: 3002/login', credentials).subscribe(
+    this.http.post('http://localhost:3002/login', credentials).subscribe(
 
       (response: LoginResponse) => {
 
         if (response.ok) {
-
-        this.loginStore.loginResponse = response;
-        sessionStorage.setItem('userToken', response.token);
-        sessionStorage.setItem('okUser', 'ok');
+          console.log('logeado', ' token =>', response.token, 'guardado token en sessionStroge');
+          this.loginStore.loginResponse = response;
+          sessionStorage.setItem('userToken', response.token);
+          sessionStorage.setItem('okUser', 'ok');
+          this.router.navigate(['dashboard']);
 
         }
 
@@ -71,19 +73,19 @@ export class LoginServiceService {
 
   }
 
-  register( newUser ) {
-
+  register(newUser: UserPostClass) {
+    console.log('register method', newUser);
     // cambiar interfaz de repsuesta
 
-    this.http.post('http: //localhost: 3002/users', newUser).subscribe((response: LoginResponse) => {
+    this.http.post('http://localhost:3002/users', newUser).subscribe((response: LoginResponse) => {
 
-    if (response.ok) {
+      if (response.ok) {
 
-      this.loginStore.loginResponse = response;
-      sessionStorage.setItem('userToken', response.token);
-      sessionStorage.setItem('okUser', 'ok');
+        this.loginStore.loginResponse = response;
+        sessionStorage.setItem('userToken', response.token);
+        sessionStorage.setItem('okUser', 'ok');
 
-      this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard']);
 
       }
 
@@ -97,7 +99,7 @@ export class LoginServiceService {
       action: 'creteProfile',
       text: 'continue',
       bgColor: 'yellow',
-      textColor: 'white',
+      textColor: 'black',
     };
   }
 
@@ -107,7 +109,7 @@ export class LoginServiceService {
       action: 'toLogin',
       text: 'To Login',
       bgColor: 'red',
-      textColor: 'white',
+      textColor: 'black',
     };
   }
 
@@ -118,24 +120,24 @@ export class LoginServiceService {
       action: 'toRegister',
       text: 'register',
       bgColor: 'blue',
-      textColor: 'white',
+      textColor: 'black',
 
     };
   }
 
-  get  HorizontalScrollContainerOptions(): HorizontalScrollContainerInterface {
+  get HorizontalScrollContainerOptions(): HorizontalScrollContainerInterface {
     return {
       colors: {
-        primary:  'rgb(238, 238, 128)',
-        secondary:  'rgb(122, 122, 224)'
+        primary: 'white',
+        secondary: 'white'
       }
     };
 
-}
+  }
   get AlertOptions(): AlerOptionsInterface {
     return {
-      message:  'error prueva',
-      type:  TypeProjectEnum.danger
+      message: 'error prueva',
+      type: TypeProjectEnum.danger
     };
   }
 

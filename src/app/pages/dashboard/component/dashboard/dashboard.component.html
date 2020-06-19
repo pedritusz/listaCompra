@@ -1,1 +1,7 @@
 <p>dashboard works!</p>
+<h1>logeado</h1>
+<div class="dashboard--items-wrapper">
+    <div *ngFor="let item of sections" >
+        <app-section-item [options]='item'></app-section-item>
+    </div>
+</div>

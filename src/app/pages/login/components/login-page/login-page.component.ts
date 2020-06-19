@@ -4,8 +4,11 @@ import { HorizontalScrollContainerComponent } from 'src/app/modules/horizontal-s
 import { HorizontalScrollContainerInterface } from 'src/app/interfaces/horizontal-scroll-container';
 import { ButtonInterface } from 'src/app/interfaces/buttonInterface';
 import { ErrorService } from 'src/app/services/error.service';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-
+import { Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
+import { AlerOptionsInterface } from 'src/app/interfaces/aler-options.interface';
+import { UserPostClass } from 'src/app/classes/user-post.class';
+import { RoleEnum } from 'src/app/enums/role.enum';
+import { throwError } from 'rxjs';
 
 
 @Component({
@@ -15,16 +18,16 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class LoginPageComponent implements OnInit {
 
-  @ViewChild(HorizontalScrollContainerComponent)hcc: HorizontalScrollContainerComponent;
+  @ViewChild(HorizontalScrollContainerComponent) hcc: HorizontalScrollContainerComponent;
 
-  constructor( private loginService: LoginServiceService,  private fb: FormBuilder ) { }
+  constructor(private loginService: LoginServiceService, private fb: FormBuilder, private errorService: ErrorService) { }
 
   continueLoginButtonOptions: ButtonInterface = this.loginService.loginButtonOptions;
   toRegisterButtonOptions: ButtonInterface = this.loginService.toRegisterButtonOptions;
   continueCreateProfileOptions: ButtonInterface = this.loginService.continueCreateProfileButtonOptions;
-  toLoginButtonOptions: ButtonInterface =  this.loginService.toLoginButtonOptions;
+  toLoginButtonOptions: ButtonInterface = this.loginService.toLoginButtonOptions;
   horizontalScrollContainerOptions: HorizontalScrollContainerInterface = this.loginService.HorizontalScrollContainerOptions;
-  error;
+  error: AlerOptionsInterface;
   loginForm = this.fb.group({
 
     email: ['', Validators.required],
@@ -43,32 +46,31 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     // subcripcion al error que obtiene el login service
     this.loginService.loginStore.error.subscribe((error) => {
-
       this.error = error;
 
     });
   }
 
 
-// capturo la accion del boton component
+  // capturo la accion del boton component
   public buttonCmp($event) {
 
     switch ($event) {
       case 'continueLogin':
-       this.submit();
-       break;
+        this.submit();
+        break;
 
       case 'toRegister':
-       this.hcc.toSecondary();
-       break;
+        this.hcc.toSecondary();
+        break;
 
       case 'toLogin':
-       this.hcc.toSecondary();
-       break;
+        this.hcc.toSecondary();
+        break;
 
       case 'creteProfile':
-       this.creteProfile();
-       break;
+        this.creteProfile();
+        break;
 
       default:
         break;
@@ -87,13 +89,26 @@ export class LoginPageComponent implements OnInit {
 
   creteProfile() {
     if (this.registerForm.valid) {
+      if (this.registerForm.value.password === this.registerForm.value.confirmPassword) {
+        this.loginService.register(new UserPostClass(this.registerForm.value.name, this.registerForm.value.email, this.registerForm.value.password));
+      }  else {
+        this.errorService.error.next({error: {message: 'passwords do not match', ok: false }} );
 
+      }
     }
 
     console.log(this.registerForm);
-    console.log( 'contraseñas iguales', this.registerForm.value.password === this.registerForm.value.confirmPassword );
-   // console.log( 'register form validator', this.registerForm.valid );
+    console.log('contraseñas iguales', this.registerForm.value.password === this.registerForm.value.confirmPassword, this.registerForm.value.password, this.registerForm.value.confirmPassword);
+    // console.log( 'register form validator', this.registerForm.valid );
 
+  }
+
+  equalPasswords(password = this.registerForm.value.password, control: AbstractControl) {
+    let error = null;
+    if (control.value !== password) {
+      error = { ...error, equalError: 'this password in not equal' };
+    }
+    return error;
   }
 
 

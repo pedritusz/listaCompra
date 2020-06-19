@@ -7,7 +7,6 @@ import { HeaderModule } from './modules/header/header-module/header/header.modul
 import { PruevasModule } from './documentation/pruevas/pruevas.module';
 import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptorInterceptor } from './interceptors/error-interceptor.interceptor';
-import { DashboardModule } from './pages/dashboard/module/dashboard.module';
 import { LoginOkGuard } from './guards/login-ok.guard';
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { LoginOkGuard } from './guards/login-ok.guard';
     HeaderModule,
     PruevasModule,
     HttpClientModule,
-    DashboardModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorInterceptor, multi: true }, LoginOkGuard

@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './section-item.component.html',
   styleUrls: ['./section-item.component.scss']
 })
-export class SectionItemComponent implements OnInit {
+export class SectionItemComponent  {
 
   @Input() public options: SectionItemInterface;
 
@@ -14,7 +14,5 @@ export class SectionItemComponent implements OnInit {
   private  ruter: Router
   ) { }
 
-  ngOnInit(): void {
-  }
 
 }
