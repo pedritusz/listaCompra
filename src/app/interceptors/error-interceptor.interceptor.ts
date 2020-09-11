@@ -23,7 +23,6 @@ export class ErrorInterceptorInterceptor implements HttpInterceptor {
 
       // desde el catch error capturo el error que me devuelve
       catchError( (error) => {
-        console.log(error);
         this.errorService.error.next(error);
         // el trhowerror genera el error que yo quiera
         return throwError(error.error.message);

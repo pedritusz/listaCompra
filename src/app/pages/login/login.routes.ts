@@ -3,10 +3,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import {Routes, RouterModule} from '@angular/router';
 
 const routes: Routes = [
-    {
-        path: '',
-        component: LoginPageComponent
-    },
+    { path: '', component: LoginPageComponent},
     {path: 'dashboard', loadChildren : () => import ( '../dashboard/module/dashboard.module' ).then( m => m.DashboardModule )},
 ];
 

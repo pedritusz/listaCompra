@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DashboardService } from '../../dashboard.service';
+import { DashboardService } from 'src/app/services/dashboard.service';
+import { ButtonClass } from 'src/app/classes/button';
+import { ShoppingListInteface } from 'src/app/interfaces/shopping-list.interface';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,11 +10,22 @@ import { DashboardService } from '../../dashboard.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  newListButton = new ButtonClass('create new List', 'newList', '#28a745', undefined, 'white');
 
   constructor(public dashboardService: DashboardService) { }
-  sections = this.dashboardService.sections;
 
   ngOnInit(): void {
+    this.dashboardService.getShoppingLists();
+  }
+  buttonAction($event) {
+    switch ($event) {
+      case 'newShoppingList':
+        this.dashboardService.createNewShoppingList($event);
+        break;
+
+      default:
+        break;
+    }
   }
 
 }

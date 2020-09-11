@@ -56,9 +56,6 @@ let LoginPageComponent = class LoginPageComponent {
     creteProfile() {
         if (this.registerForm.valid) {
         }
-        console.log(this.registerForm);
-        console.log('contraseñas iguales', this.registerForm.value.password === this.registerForm.value.confirmPassword);
-        // console.log( 'register form validator', this.registerForm.valid )
     }
 };
 __decorate([

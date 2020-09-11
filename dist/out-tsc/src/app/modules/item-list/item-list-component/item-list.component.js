@@ -23,7 +23,6 @@ let ItemListComponent = class ItemListComponent {
         this.inStockWidth = (100 / this.ItemListOptions.minStock) * this.ItemListOptions.stock;
     }
     onClick() {
-        console.log(this.ItemListOptions.clickAction);
         this.router.navigate([this.ItemListOptions.clickAction]);
     }
 };

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ItemListInputInterface } from 'src/app/interfaces/itemListinputInterface';
+import { ItemProductListInterface } from 'src/app/interfaces/item-product-list.interface';
 import { Route } from '@angular/compiler/src/core';
 import { RouterLink, Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { RouterLink, Router } from '@angular/router';
 })
 export class ItemListComponent implements OnInit {
 
-  @Input() ItemListOptions: ItemListInputInterface;
+  @Input() ItemListOptions: ItemProductListInterface;
   itemName: string;
   inStockWidth: number;
   inStock: number;

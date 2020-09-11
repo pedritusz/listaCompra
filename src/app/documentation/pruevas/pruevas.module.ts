@@ -10,7 +10,7 @@ import {MainItemBodyModule} from '../../modules/main-item-body/main-item-body-mo
 import {SectionItemModule} from '../../modules/section-item/section-item-module/section-item.module';
 import { RouterModule } from '@angular/router';
 import { PruevasRouterModule } from './pruevas.routes';
-
+import { ItemListOfListModule } from '../../modules/item-list-of-list/item-list-of-list.module'
 
 @NgModule({
   declarations : [
@@ -26,6 +26,7 @@ import { PruevasRouterModule } from './pruevas.routes';
     ItemListModule,
     MainItemBodyModule,
     SectionItemModule,
+    ItemListOfListModule,
     RouterModule,
   ],
   exports : [

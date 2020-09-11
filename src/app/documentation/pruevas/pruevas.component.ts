@@ -41,7 +41,6 @@ export class PruevasComponent implements OnInit {
   }
 
   butonCmp( $event ) {
-    console.log( $event );
   }
 
   change() {

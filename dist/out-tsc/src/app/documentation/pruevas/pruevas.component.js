@@ -26,7 +26,6 @@ let PruevasComponent = class PruevasComponent {
     ngOnInit() {
     }
     butonCmp($event) {
-        console.log($event);
     }
     change() {
         this.hcc.toSecondary();

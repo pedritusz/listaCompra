@@ -56,12 +56,11 @@ export class LoginServiceService {
 
   login(credentials): void {
 
-    this.http.post(`${Environment.production}/login`, credentials).subscribe(
+    this.http.post(`${Environment.development}/login`, credentials).subscribe(
 
       (response: LoginResponse) => {
 
         if (response.ok) {
-          console.log('logeado', ' token =>', response.token, 'guardado token en sessionStroge');
           this.loginStore.loginResponse = response;
           sessionStorage.setItem('userToken', response.token);
           sessionStorage.setItem('okUser', 'ok');
@@ -76,10 +75,9 @@ export class LoginServiceService {
   }
 
   register(newUser: UserPostClass) {
-    console.log('register method', newUser);
     // cambiar interfaz de repsuesta
 
-    this.http.post(`${Environment.production}/users`, newUser).subscribe((response: LoginResponse) => {
+    this.http.post(`${Environment.development}/users`, newUser).subscribe((response: LoginResponse) => {
 
       if (response.ok) {
 

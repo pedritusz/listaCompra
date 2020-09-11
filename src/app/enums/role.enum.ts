@@ -3,3 +3,4 @@ admin = 'admin',
 current = 'current'
 }
 
+//cambiar y comprovar (admin,current, pro)

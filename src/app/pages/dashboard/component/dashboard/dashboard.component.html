@@ -1,7 +1,10 @@
-<p>dashboard works!</p>
-<h1>logeado</h1>
-<div class="dashboard--items-wrapper">
-    <div *ngFor="let item of sections" >
-        <app-section-item [options]='item'></app-section-item>
+<app-button class="button--create-new-list" (actionEmit)="buttonAction($event)" [buttonOptions]="newListButton">
+</app-button>
+<div *ngIf="dashboardService.shoppingLists">
+    <div *ngFor="let shoppingList of dashboardService.shoppingLists">
+        <app-item-lis-of-list [list]="shoppingList"></app-item-lis-of-list>
+
+      
     </div>
+
 </div>

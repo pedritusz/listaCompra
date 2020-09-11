@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ItemListInputInterface } from '../interfaces/itemListinputInterface';
+import { ItemProductListInterface } from '../interfaces/item-product-list.interface';
 import { QuantityTypeEnum } from '../enums/quantityTypeEnum';
 import { ButtonInterface } from '../interfaces/buttonInterface';
 
@@ -13,7 +13,7 @@ export class MockServicesService {
 
     }
 
-  itemList: ItemListInputInterface = {
+  itemList: ItemProductListInterface = {
     clickAction: '/prueva',
     minStock: 25,
     stock: 12,

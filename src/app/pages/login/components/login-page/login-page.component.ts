@@ -95,9 +95,6 @@ export class LoginPageComponent implements OnInit {
       }
     }
 
-    console.log(this.registerForm);
-    console.log('contraseñas iguales', this.registerForm.value.password === this.registerForm.value.confirmPassword, this.registerForm.value.password, this.registerForm.value.confirmPassword);
-    // console.log( 'register form validator', this.registerForm.valid );
 
   }
 
