@@ -1,10 +1,13 @@
-<app-button class="button--create-new-list" (actionEmit)="buttonAction($event)" [buttonOptions]="newListButton">
-</app-button>
-<div *ngIf="dashboardService.shoppingLists">
-    <div *ngFor="let shoppingList of dashboardService.shoppingLists">
-        <app-item-lis-of-list [list]="shoppingList"></app-item-lis-of-list>
+<!-- <app-button class="button--create-new-list" (actionEmit)="buttonAction($event)" [buttonOptions]="newListButton">
+</app-button> -->
+<app-add-button></app-add-button>
+<div class="container">
+    <div *ngIf="dashboardService.productsForList.length > 0">
+        <div *ngFor="let product of dashboardService.productsForList">
 
-      
+            <app-item-list [ItemListOptions]='product'></app-item-list>
+            
+        </div>
+
     </div>
-
 </div>

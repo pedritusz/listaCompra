@@ -3,12 +3,20 @@
 .item-list--container{
     width: 100%;
     position: relative;
+
 }
 .item-list--shared-container{
 
     border-radius: $item-list--border-radius;
  
 } 
+.badge{
+    border-radius: 50%;
+    justify-content: center;
+}
+.item-list--product-name{
+    align-content: center;
+}
 
 .item-list--full-container{
 

@@ -53,7 +53,6 @@ export class ItemListComponent implements OnInit {
 
   onClick() {
 
-    console.log( this.ItemListOptions.clickAction );
     this.router.navigate( [this.ItemListOptions.clickAction] );
 
   }

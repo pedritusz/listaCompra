@@ -1,27 +1,21 @@
 <div class="item-list--container" (click)="onClick()">
 
+    <h3 class="item-list--product-name">{{itemName}} </h3>
     <div class="item-list--wrapper">
-
         <div [ngStyle]="{'width': inStockPercentage}" class="item-list--shared-container item-list--full-container">
 
-            <div class="item-list--text" *ngIf="inStockWidth >= 20">
-                {{itemName}}  {{inStock}} {{this.ItemListOptions.cuantityType}}
-            </div>
-
-            <div  class="item-list--text" *ngIf="inStockWidth < 20 && inStockWidth > 0">
-                {{inStock}}
+            <div class="item-list--text " >
+               <span class="badge-full badge badge-light"> {{inStock}} {{this.ItemListOptions.cuantityType}} </span>  
             </div>
 
         </div>
 
         <div class="item-list--shared-container item-list--lack-container">
 
-                <div  class="item-list--text-lack" *ngIf="inStockWidth < 20">
-                    {{itemLack}}   {{itemName}}
-                </div>
+          
 
-                <div *ngIf="inStockWidth > 20" class="item-list--text-lack">
-                    {{itemLack}}
+                <div  class="item-list--text-lack">
+                    <span class="badge-lack badge badge-light">{{itemLack}} {{this.ItemListOptions.cuantityType}}</span>
                 </div>
             
         </div>

@@ -10,12 +10,12 @@ import { ShoppingListInteface } from 'src/app/interfaces/shopping-list.interface
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  newListButton = new ButtonClass('create new List', 'newList', '#28a745', undefined, 'white');
+  newListButton = new ButtonClass('create new product', 'newProduct', '#28a745', undefined, 'white');
 
   constructor(public dashboardService: DashboardService) { }
 
   ngOnInit(): void {
-    this.dashboardService.getShoppingLists();
+    this.dashboardService.getUserProducts();
   }
   buttonAction($event) {
     switch ($event) {
