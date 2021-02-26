@@ -78,6 +78,7 @@ export class LoginServiceService {
     // cambiar interfaz de repsuesta
 
     this.http.post(`${Environment.development}/users`, newUser).subscribe((response: LoginResponse) => {
+      console.log(response)
 
       if (response.ok) {
 
