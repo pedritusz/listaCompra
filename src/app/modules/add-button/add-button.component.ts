@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-button',
@@ -6,8 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-button.component.scss']
 })
 export class AddButtonComponent {
-
+  @Input()inAction : string;
+  @Output()outAction = new EventEmitter();
   constructor() { }
 
+  onClick(){
+    this.outAction.emit(this.inAction)
+
+  }
 
 }

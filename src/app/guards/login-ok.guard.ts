@@ -20,7 +20,7 @@ export class LoginOkGuard implements CanActivate {
 
       }
 
-      this.router.navigate(['pruevas']);
+      //this.router.navigate(['pruevas']);
 
     }
 

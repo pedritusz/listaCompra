@@ -26,10 +26,11 @@ export class DashboardService {
 
     });
   }
-  createNewShoppingList(route) {
+  createNewShoppingList() {
 
-    this.router.navigate([route]);
+    this.router.navigate(["createList"]);
 
   }
+ 
 
 }

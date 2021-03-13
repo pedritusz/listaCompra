@@ -7,6 +7,7 @@ import { SectionItemModule } from 'src/app/modules/section-item/section-item-mod
 import { ButtonModule } from 'src/app/modules/button/button-module/button.module';
 import { ItemListOfListModule } from '../../../modules/item-list-of-list/item-list-of-list.module';
 import { AddButtonModule } from 'src/app/modules/add-button/add-button.module';
+import { DashboardService } from 'src/app/services/dashboard.service';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -21,6 +22,9 @@ import { AddButtonModule } from 'src/app/modules/add-button/add-button.module';
   ],
   exports: [
     DashboardComponent
+  ],
+  providers:[
+    DashboardService
   ]
 })
 export class DashboardModule { }
